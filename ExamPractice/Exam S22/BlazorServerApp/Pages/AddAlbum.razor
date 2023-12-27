@@ -1,0 +1,69 @@
+﻿@page "/AddAlbum"
+@using BlazorServerApp.Clients
+@using Domains
+@inject IAlbumClient AlbumClient;
+<h3>AddImage</h3>
+
+<div class="form-group field">
+    <label>Title:</label>
+    <input type="text" @bind="@title" @bind:event="oninput"/>
+</div>
+
+<div class="form-group field">
+    <label>Description:</label>
+    <input type="textbox" @bind="@description" @bind:event="oninput"/>
+</div>
+
+<div class="form-group field">
+    <label>Created By:</label>
+    <input type="text" @bind="@createdBy" @bind:event="oninput"/>
+</div>
+
+@if (!string.IsNullOrEmpty(resultMsg))
+{
+    <label style="color: @color">@resultMsg</label>
+}
+
+<div class="button-row">
+    <button @onclick="Create" class="btn-outline-primary">Create</button>
+</div>
+
+@code {
+    private string? title = "";
+    private string? description = "";
+    private string? createdBy = "";
+
+    private string? resultMsg;
+    private string? color;
+
+
+    private async Task Create()
+    {
+        try
+        {
+            if (string.IsNullOrEmpty(title)) throw new Exception("Title cannot be empty.");
+            if (string.IsNullOrEmpty(createdBy)) throw new Exception("Created By cannot be empty");
+
+            Album toCreateAlbum = new Album()
+            {
+                Title = title,
+                CreatedBy = createdBy,
+                Description = description,
+            };
+            Album createdAlbum = await AlbumClient.CreateAlbumAsync(toCreateAlbum);
+            resultMsg = $"Album created!!";
+            color = "Green";
+
+            title = "";
+            createdBy = "";
+            description = "";
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            resultMsg = e.Message;
+            color = "red";
+        }
+    }
+
+}

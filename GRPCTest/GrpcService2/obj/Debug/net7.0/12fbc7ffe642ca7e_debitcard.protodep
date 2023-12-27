@@ -1,0 +1,3 @@
+obj\Debug\net7.0\Protos/Debitcard.cs \
+obj\Debug\net7.0\Protos/DebitcardGrpc.cs: C:/Users/pdlra/.nuget/packages/grpc.tools/2.49.0/build/native/include/google/protobuf/wrappers.proto\
+ Protos/debitcard.proto

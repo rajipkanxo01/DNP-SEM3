@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "E53J46n6a+cThLEhLkGBB+v2TVk5kaONPQe7nwcp/CEKlJTAgS1CaU/yiXsCX5N7IyIwc4BdAk6QsLBMdD7v3w==",
+  "success": true,
+  "projectFilePath": "D:\\VIA\\SEM-3\\Projects\\DNP1\\GRPCTest\\GRPCTest\\GRPCTest.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\pdlra\\.nuget\\packages\\grpc.core\\2.46.6\\grpc.core.2.46.6.nupkg.sha512",
+    "C:\\Users\\pdlra\\.nuget\\packages\\grpc.core.api\\2.53.0-pre1\\grpc.core.api.2.53.0-pre1.nupkg.sha512",
+    "C:\\Users\\pdlra\\.nuget\\packages\\grpc.tools\\2.54.0\\grpc.tools.2.54.0.nupkg.sha512",
+    "C:\\Users\\pdlra\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512"
+  ],
+  "logs": []
+}

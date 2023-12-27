@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+option csharp_namespace = "GRPCTest";
+
+import "google/protobuf/wrappers.proto";
+
+message DebitCard {
+  int64 card_id = 1;
+  int64 card_number = 2;
+  string expiry_date = 3;
+  int32 cvv = 4;
+}
+
+service DebitCardService {
+  rpc GetDebitCard(google.protobuf.Int64Value) returns (DebitCard) {}
+  rpc CreateDebitCard(DebitCard) returns (google.protobuf.BoolValue) {}
+  rpc UpdateDebitCard(UpdateCard) returns (DebitCard) {}
+  rpc DeleteDebitCard(google.protobuf.Int64Value) returns (google.protobuf.BoolValue) {}
+}
+
+message UpdateCard {
+  int64 card_id = 1;
+  DebitCard card = 2;
+}

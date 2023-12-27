@@ -1,0 +1,277 @@
+﻿/*whole container*/
+.form-content {
+    background: #fff;
+    width: 1000px;
+    height: auto;
+    box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.15);
+    border-radius: 25px;
+    font-family: 'Open Sans', sans-serif;
+    position: relative;
+    display: flex;
+    margin: 70px auto;
+}
+
+
+/*steps*/
+.steps-container {
+    background-color: #3e4061;
+    border-radius: 25px;
+
+}
+
+.step-text {
+    color: #ffffff;
+    padding: 25px 0 8px;
+    font-size: 15px;
+    /*font-weight: bold;*/
+}
+
+
+.step {
+    padding: 7px 0;
+}
+
+.step:hover {
+    cursor: pointer;
+}
+
+.step::after {
+    width: 250px;
+    height: 1px;
+    content: "  ";
+    background: rgba(255, 255, 255, 0.08);
+    position: absolute;
+    left: -1px;
+}
+
+
+.icon-image {
+    margin-top: 5px;
+    width: 30px;
+}
+
+/*input field css*/
+.section-description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+
+.heading {
+    font-size: 22px;
+    color: #333;
+    font-weight: 700;
+    margin: 0;
+}
+
+.heading-subtext {
+    color: #666;
+    font-size: 14px;
+    margin-top: 2px;
+    max-width: 400px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+}
+
+.form-container {
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 0;
+    width: auto;
+    height: auto;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 25px -15px rgba(0, 0, 0, 0.3);
+}
+
+.form-container .title {
+    color: #000;
+    font-size: 25px;
+    font-weight: 600;
+    text-transform: capitalize;
+    margin: 0 0 25px;
+}
+
+.form-container .title:after {
+    content: '';
+    background-color: #00A9EF;
+    height: 3px;
+    width: 60px;
+    margin: 10px 0 0;
+    display: block;
+    clear: both;
+}
+
+.sub-title {
+    color: #333;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0 0 20px;
+}
+
+.form-horizontal {
+    font-size: 0;
+}
+
+.form-group {
+    color: #333;
+    width: 50%;
+    padding: 0 8px;
+    margin: 0 0 15px;
+    display: inline-block;
+}
+
+
+.form-group label {
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.form-control {
+    color: #888;
+    background: #fff;
+    font-weight: 400;
+    letter-spacing: 1px;
+    height: 40px;
+    padding: 6px 12px;
+    border-radius: 10px;
+    border: 2px solid #e7e7e7;
+    box-shadow: none;
+}
+
+.form-control:focus {
+    box-shadow: 0 0 5px #dcdcdc;
+}
+
+
+.form-container .signin-link {
+    color: #333;
+    font-size: 14px;
+    width: 75%;
+    margin-right: 30px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.form-container .signin-link a {
+    color: #00A9EF;
+    font-weight: 600;
+    transition: all 0.3s ease 0s;
+}
+
+/*card css*/
+/*.card {
+    position: relative;
+    width: 500px;
+    height: 350px;
+    background: #fcfcfc;
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    overflow: hidden;
+    margin: 30px;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -20%;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.05), transparent);
+    pointer-events: none;
+}
+
+.logo {
+    position: absolute;
+    top: 130px;
+    right: 40px;
+    width: 60px;
+    height: 60px;
+    background: #ea222c;
+    border-radius: 50%;
+    box-shadow: -40px 0 0 rgba(255, 164, 36, 0.5);
+}
+
+.chip {
+    position: absolute;
+    max-width: 70px;
+}
+
+.bankName {
+    color: #999;
+    text-align: end;
+    outline: none;
+    width: 100%;
+    font-size: 1.5em;
+}
+.card form {
+    margin-top: 45px;
+}
+
+.card .inputBox {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.card .inputBox span {
+    color: #089cff;
+    font-size: 1.1em;
+}
+
+!*
+.card .inputBox input {
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 1.8em;
+    font-family: 'Share Tech Mono', monospace;
+}
+*!
+
+.card .group {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}*/
+
+/*.card .group .inputBox:last-child {
+    max-width: 60px;
+}*/
+
+
+/* button css */
+.signup {
+    align-items: center;
+    background-color: #0A66C2;
+    border: 0;
+    border-radius: 100px;
+    box-sizing: border-box;
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: -apple-system, system-ui, system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell, "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    justify-content: center;
+    max-width: 480px;
+    overflow: hidden;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+.signup:hover,
+.signup:focus {
+    background-color: #16437E;
+    color: #ffffff;
+}

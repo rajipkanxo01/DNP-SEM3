@@ -1,0 +1,65 @@
+is_global = true
+build_property.TargetFramework = net7.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = SingUpTest
+build_property.RootNamespace = SingUpTest
+build_property.ProjectDir = D:\VIA\SEM-3\Projects\DNP1\SingUpTest\SingUpTest\
+build_property.RazorLangVersion = 7.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = D:\VIA\SEM-3\Projects\DNP1\SingUpTest\SingUpTest
+build_property._RazorSourceGeneratorDebug = 
+
+[D:/VIA/SEM-3/Projects/DNP1/SingUpTest/SingUpTest/App.razor]
+build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/VIA/SEM-3/Projects/DNP1/SingUpTest/SingUpTest/Pages/Counter.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/VIA/SEM-3/Projects/DNP1/SingUpTest/SingUpTest/Pages/FetchData.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmV0Y2hEYXRhLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/VIA/SEM-3/Projects/DNP1/SingUpTest/SingUpTest/Pages/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/VIA/SEM-3/Projects/DNP1/SingUpTest/SingUpTest/Shared/SurveyPrompt.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFN1cnZleVByb21wdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/VIA/SEM-3/Projects/DNP1/SingUpTest/SingUpTest/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/VIA/SEM-3/Projects/DNP1/SingUpTest/SingUpTest/Pages/SEPSignUp.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU0VQU2lnblVwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-d8fwgfsd3g
+
+[D:/VIA/SEM-3/Projects/DNP1/SingUpTest/SingUpTest/Pages/SignUp.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2lnblVwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-kfkksa0jvt
+
+[D:/VIA/SEM-3/Projects/DNP1/SingUpTest/SingUpTest/Shared/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-dgup8b2l2b
+
+[D:/VIA/SEM-3/Projects/DNP1/SingUpTest/SingUpTest/Shared/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5hdk1lbnUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-3qxcsvt2vc
+
+[D:/VIA/SEM-3/Projects/DNP1/SingUpTest/SingUpTest/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/VIA/SEM-3/Projects/DNP1/SingUpTest/SingUpTest/Pages/_Host.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0hvc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 

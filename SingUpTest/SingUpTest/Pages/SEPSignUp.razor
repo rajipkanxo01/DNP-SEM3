@@ -1,0 +1,164 @@
+﻿@page "/SEPSignUp"
+
+<div class="form-content">
+    <div class="container ">
+        <div class="row">
+            <!--    steps-->
+            <div class="col-md-3 steps-container">
+                <div class="step" onclick="@GoToStep1">
+                    <h2>
+                        <img src="images/number-1.png" class="icon-image" alt="">
+                        <span class="step-text">Personal Information</span>
+                    </h2>
+                </div>
+
+                <div class="step" onclick="@GoToStep2">
+                    <h2>
+                        <img src="images/number-2.png" class="icon-image" alt="">
+                        <span class="step-text">Connect Your Credit Card</span>
+                    </h2>
+                </div>
+            </div>
+
+            <!--    info-->
+            <div class="col-md-9 ">
+                <div class="form-container">
+                    <h3 class="title">Register</h3>
+
+                    @* personal information page *@
+                    @switch (step)
+                    {
+                        case 1:
+                            // description here 
+                            <div class="section-description">
+                                <h3 class="heading">Personal Information</h3>
+                                <p class="heading-subtext">
+                                    Please enter your information and proceed to the next step, so you can
+                                    register.
+                                </p>
+                            </div>
+
+                            // input box
+                            <form class="form-horizontal">
+                                <div class="form-group">
+                                    <label>User Name</label>
+                                    <input type="text" placeholder="User Name" @bind="username" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label>Full Name</label>
+                                    <input type="email" class="form-control" @bind="name" placeholder="Full Name">
+                                </div>
+                                <div class="form-group">
+                                    <label>Password</label>
+                                    <input type="password" class="form-control" @bind="password" placeholder="Password">
+                                </div>
+                                <div class="form-group">
+                                    <label>Confirm Password</label>
+                                    <input type="password" class="form-control" @bind="repeatPassword" placeholder="Confirm Password">
+                                </div>
+                            </form>
+                            break;
+                        /* credit card page */
+                        case 2:
+                            <div class="section-description">
+                                <h3 class="heading">Credit Card Details</h3>
+                                <p class="heading-subtext">
+                                    Please enter your credit card details and click to the create account, so you can
+                                    register.
+                                </p>
+                            </div>
+
+                            <section>
+                                @* card html *@
+                                @*<div class="card">
+                                    <img src="images/chip.png" alt="" class="chip">
+                                    <div class="logo"></div>
+                                    <h2 class="bankName" contenteditable="fa">Bank Name</h2>
+                                    <form>
+                                        <div class="inputBox">
+                                            <span>Card No.</span>
+                                            $1$ <input type="text" placeholder="0123 4567 8901 2345" maxlength="19"/> #1#
+                                        </div>
+                                        <div class="inputBox">
+                                            <span>Card Holder</span>
+                                            $1$ <input type="text" placeholder="John Doe"/> #1#
+                                        </div>
+                                        <div class="group">
+                                            <div class="inputBox">
+                                                <span>Expires</span>
+                                                <input type="text" placeholder="MM/YY" maxlength="5"/>
+                                            </div>
+                                            <div class="inputBox">
+                                                <span>CCV</span>
+                                                $1$ <input type="password" placeholder="***" maxlength="4"/> #1#
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>*@
+
+                                @* form html *@
+                                <form class="form-horizontal">
+                                    <div class="form-group">
+                                        <label>Cardholder Name</label>
+                                        <input type="text" placeholder="Full name as displayed on card." class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Card Number</label>
+                                        <input type="text" class="form-control" placeholder="Card Number">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Expiry Date</label>
+                                        <input type="text" class="form-control" placeholder="MM/YYYY">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>CVV</label>
+                                        <input type="password" class="form-control" placeholder="CVV">
+                                    </div>
+                                </form>
+                            </section>
+                            break;
+                    }
+
+                    @* footer from here *@
+                    <div class="row">
+                        <div class="col-md-8">
+                            <span class="signin-link">Already have an account? Click here to <a href="">Login</a></span>
+                        </div>
+                        <div class="col-md-4">
+                            <button class="signup">
+                                @if (step == 1)
+                                {
+                                    <span onclick="@GoToStep2">Next</span>
+                                }
+                                else
+                                {
+                                    <span>Create Account</span>
+                                }
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    private int step = 1;
+    private string? name;
+    private string? email;
+    private string? username;
+    private string? password;
+    private string? repeatPassword;
+
+    private void GoToStep2()
+    {
+        step = 2;
+    }
+
+    private void GoToStep1()
+    {
+        step = 1;
+    }
+
+}

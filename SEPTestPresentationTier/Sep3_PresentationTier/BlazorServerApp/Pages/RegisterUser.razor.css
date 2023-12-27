@@ -1,0 +1,226 @@
+/*whole container*/
+.form-content {
+    background: #fff;
+    width: 1000px;
+    height: auto;
+    box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.15);
+    border-radius: 25px;
+    font-family: 'Open Sans', sans-serif;
+    position: relative;
+    display: flex;
+    margin: 70px auto;
+}
+
+
+/*steps*/
+.steps-container {
+    background-color: #3e4061;
+    border-radius: 25px;
+
+}
+
+.step-text {
+    color: #ffffff;
+    padding: 25px 0 8px;
+    font-size: 15px;
+    /*font-weight: bold;*/
+}
+
+
+.step {
+    padding: 7px 0;
+}
+
+.step:hover {
+    cursor: pointer;
+}
+
+.step::after {
+    width: 250px;
+    height: 1px;
+    content: "  ";
+    background: rgba(255, 255, 255, 0.08);
+    position: absolute;
+    left: -1px;
+}
+
+
+.icon-image {
+    margin-top: 5px;
+    width: 30px;
+}
+
+
+/*create account button*/
+.signUp {
+    background: #5E5DF0;
+    border-radius: 999px;
+    box-shadow: #5E5DF0 0 10px 20px -10px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-family: Inter, Helvetica, "Apple Color Emoji", "Segoe UI Emoji", NotoColorEmoji, "Noto Color Emoji", "Segoe UI Symbol", "Android Emoji", EmojiSymbols, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    opacity: 1;
+    outline: 0 solid transparent;
+    padding: 8px 18px;
+    width: fit-content;
+    border: 0;
+    position: relative;
+    top: 250px;
+    left: 35px;
+}
+
+.signUp:hover,
+.signUp:focus {
+    background-color: #403fa3;
+}
+
+
+
+/*input field css*/
+.section-description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+
+.heading {
+    font-size: 22px;
+    color: #333;
+    font-weight: 700;
+    margin: 0;
+}
+
+.heading-subtext {
+    color: #666;
+    font-size: 14px;
+    margin-top: 2px;
+    max-width: 400px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+}
+
+.form-container {
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 0;
+    width: auto;
+    height: auto;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 25px -15px rgba(0, 0, 0, 0.3);
+}
+
+.form-container .title {
+    color: #000;
+    font-size: 25px;
+    font-weight: 600;
+    text-transform: capitalize;
+    margin: 0 0 25px;
+}
+
+.form-container .title:after {
+    content: '';
+    background-color: #00A9EF;
+    height: 3px;
+    width: 60px;
+    margin: 10px 0 0;
+    display: block;
+    clear: both;
+}
+
+.sub-title {
+    color: #333;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0 0 20px;
+}
+
+.form-horizontal {
+    font-size: 0;
+}
+
+.form-group {
+    color: #333;
+    width: 50%;
+    padding: 0 8px;
+    margin: 0 0 15px;
+    display: inline-block;
+}
+
+
+.form-group label {
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.form-control {
+    color: #888;
+    background: #fff;
+    font-weight: 400;
+    letter-spacing: 1px;
+    height: 40px;
+    padding: 6px 12px;
+    border-radius: 10px;
+    border: 2px solid #e7e7e7;
+    box-shadow: none;
+    appearance: textfield;
+}
+
+.form-control:focus {
+    box-shadow: 0 0 5px #dcdcdc;
+}
+
+
+.form-container .signin-link {
+    color: #333;
+    font-size: 14px;
+    width: 75%;
+    margin-right: 30px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.form-container .signin-link a {
+    color: #00A9EF;
+    font-weight: 600;
+    transition: all 0.3s ease 0s;
+}
+
+
+/* button css */
+.nextPrevious {
+    align-items: center;
+    background-color: #0A66C2;
+    border: 0;
+    border-radius: 100px;
+    box-sizing: border-box;
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: -apple-system, system-ui, system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell, "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    justify-content: center;
+    max-width: 480px;
+    overflow: hidden;
+    padding: 10px 20px;
+    text-align: center;
+    position: relative;
+    top: -10px;
+}
+
+.nextPrevious:hover,
+.nextPrevious:focus {
+    background-color: #16437E;
+    color: #ffffff;
+}
+

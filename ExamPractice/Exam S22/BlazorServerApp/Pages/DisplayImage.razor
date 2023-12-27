@@ -1,0 +1,62 @@
+﻿@page "/DisplayImage"
+@using BlazorServerApp.Clients
+@using Domains
+@inject IDisplayClient DisplayClient;
+<h3>DisplayImage</h3>
+
+<div class="filter-bar">
+    <div class="filters-container">
+        <img src="icons/@(doShowFilters ? "clear_" : "")funnel.png" style="width: 50px ; height: 50px" @onclick="@(() => doShowFilters = !doShowFilters)" alt="Funnel"/>
+        @if (doShowFilters)
+        {
+            <div class=" field">
+                <label>Album Creator:</label>
+                <input type="text" @bind="albumCreatorFilter" @bind:event="oninput"/>
+            </div>
+
+            <div class=" field">
+                <label>Topic:</label>
+                <input type="text" @bind="topicFilter" @bind:event="oninput"/>
+            </div>
+        }
+    </div>
+</div>
+
+<div class="d-flex flex-wrap" style="max-width: 200px">
+    @foreach (var image in allImages)
+    {
+        <div class="mx-1 " style="border: solid red 2px;">
+            <div>
+                @image.Title
+            </div>
+
+            <div>
+                <img src="@image.URL" style="width: 150px ; height: 150px"/>
+            </div>
+
+            <div>
+                @image.Description
+            </div>
+        </div>
+    }
+</div>
+
+
+<div class="button-row">
+    <button @onclick="Load" class="btn-outline-primary">Load</button>
+</div>
+
+@code {
+    private ICollection<Image> allImages = new List<Image>();
+    private string? albumCreatorFilter;
+    private string? topicFilter;
+
+    private bool doShowFilters;
+
+
+    private async Task Load()
+    {
+        allImages = await DisplayClient.GetImagesAsync(albumCreatorFilter, topicFilter);
+    }
+
+}

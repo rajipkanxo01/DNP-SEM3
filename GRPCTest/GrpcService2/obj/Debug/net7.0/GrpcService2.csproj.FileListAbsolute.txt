@@ -1,0 +1,2 @@
+D:\VIA\SEM-3\Projects\DNP1\GRPCTest\GrpcService2\obj\Debug\net7.0\GrpcService2.csproj.AssemblyReference.cache
+D:\VIA\SEM-3\Projects\DNP1\GRPCTest\GrpcService2\obj\Debug\net7.0\GrpcService2.GeneratedMSBuildEditorConfig.editorconfig

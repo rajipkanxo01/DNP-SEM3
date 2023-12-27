@@ -1,0 +1,220 @@
+﻿@page "/RegisterUser"
+@using HTTPClients.ClientInterfaces
+@using System.Text.RegularExpressions
+@using Domains.Entity
+@using System.Diagnostics
+@inject IUserService UserService;
+
+<div class="form-content">
+    <div class="container ">
+        <div class="row">
+            <!--    steps-->
+            <div class="col-md-3 steps-container">
+                <div class="step" onclick="@GoToStep1">
+                    <h2>
+                        <img src="images/number-1.png" class="icon-image" alt="">
+                        <span class="step-text">Personal Information</span>
+                    </h2>
+                </div>
+
+                <div class="step" onclick="@GoToStep2">
+                    <h2>
+                        <img src="images/number-2.png" class="icon-image" alt="">
+                        <span class="step-text">Connect Your Credit Card</span>
+                    </h2>
+                </div>
+
+                <button class="signUp">
+                    <span @onclick="@CreateAsync">Create Account</span>
+                </button>
+            </div>
+
+            <!--    info-->
+            <div class="col-md-9 ">
+                <div class="form-container">
+                    <h3 class="title">Register</h3>
+
+                    @* personal information page *@
+                    @switch (step)
+                    {
+                        case 1:
+                            // description here 
+                            <div class="section-description">
+                                <h3 class="heading">Personal Information</h3>
+                                <p class="heading-subtext">
+                                    Please enter your information and proceed to the next step, so you can
+                                    register.
+                                </p>
+                            </div>
+
+                            // input box
+                            <form class="form-horizontal">
+                                <div class="form-group">
+                                    <label>User Name</label>
+                                    <input type="text" placeholder="User Name" @bind="username" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label>Full Name</label>
+                                    <input type="email" class="form-control" @bind="name" placeholder="Full Name">
+                                </div>
+                                <div class="form-group">
+                                    <label>Password</label>
+                                    <input type="password" class="form-control" @bind="password" placeholder="Password">
+                                </div>
+                                <div class="form-group">
+                                    <label>Confirm Password</label>
+                                    <input type="password" class="form-control" @bind="repeatPassword" placeholder="Confirm Password">
+                                </div>
+                            </form>
+                            break;
+                        /* credit card page */
+                        case 2:
+                            <div class="section-description">
+                                <h3 class="heading">Credit Card Details</h3>
+                                <p class="heading-subtext">
+                                    Please enter your credit card details and click to the create account, so you can
+                                    register.
+                                </p>
+                            </div>
+
+                            <section>
+                                @* form html *@
+                                <form class="form-horizontal">
+                                    <div class="form-group">
+                                        <label>Cardholder Name</label>
+                                        <input type="text" placeholder="Full name as displayed on card." disabled @bind="name" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Card Number</label>
+                                        <input type="number" class="form-control" placeholder="Card Number" pattern="[0-9]*" inputmode="numeric" @bind="cardNumber">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Expiry Date</label>
+                                        <input type="month" class="form-control" @bind="expiryFullDate" min="@DateTime.Now.ToString("MM-yyyy")">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>CVV</label>
+                                        <input type="password" class="form-control" maxlength="3" placeholder="CVV" pattern="[0-9]*" inputmode="numeric" @bind="cvv">
+                                    </div>
+                                </form>
+                            </section>
+                            break;
+                    }
+
+
+                    @* footer from here *@
+                    <div class="row">
+                        <div class="col-md-8">
+                            <span class="signin-link">Already have an account? Click here to <a href="">Login</a></span>
+                        </div>
+                        <div class="col-md-4">
+                            <button class="nextPrevious">
+                                @if (step == 1)
+                                {
+                                    <span id="NextButton" onclick="@GoToStep2">Next</span>
+                                }
+                                else
+                                {
+                                    <span onclick="@GoToStep1">Back</span>
+                                }
+                            </button>
+                        </div>
+                    </div>
+
+                    @if (isErrorMessageDisplayed)
+                    {
+                        <div class="form-group">
+                            @if (!string.IsNullOrEmpty(errorLabel))
+                            {
+                                <label id="ErrorLabel" style="color: @color; width: 100%">@errorLabel</label>
+                            }
+                        </div>
+                    }
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    private int step = 1;
+    public string? name;
+    public string? username;
+    public string? password;
+    public string? repeatPassword;
+    public long cardNumber;
+    private DateTime expiryFullDate = DateTime.Now;
+    private int cvv;
+    public string? errorLabel;
+    private string? color = "red";
+
+    private bool isErrorMessageDisplayed;
+    private Timer? timer;
+    private readonly int messageDisplayTime = 2000; // in millisecond
+
+    public void GoToStep2()
+    {
+        try
+        {
+            if (string.IsNullOrEmpty(name)) throw new Exception("Full Name Cannot Be Empty");
+            if (string.IsNullOrEmpty(username)) throw new Exception("Username Cannot Be Empty");
+            if (string.IsNullOrEmpty(password)) throw new Exception("Password Cannot Be Empty");
+            if (string.IsNullOrEmpty(repeatPassword)) throw new Exception("Repeat Password Cannot Be Empty");
+            if (!password.Equals(repeatPassword)) throw new Exception("Password and Repeat Password doesn't match!!");
+            step = 2;
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            // throw new Exception(e.Message);
+            DisplayMessage(e.Message);
+        }
+    }
+
+    private void GoToStep1()
+    {
+        step = 1;
+    }
+
+    private async Task CreateAsync()
+    {
+        try
+        {
+            string expiryDate = $"{expiryFullDate.Date.Month}/{expiryFullDate.Date.Year}";
+            if (cardNumber == 0) throw new Exception("Card Number Cannot Be Empty");
+            if (cardNumber.ToString().Length != 16) throw new Exception("Card Number Must Be 16 Digits Long");
+            if (string.IsNullOrEmpty(expiryDate)) throw new Exception("ExpiryDate Cannot Be Empty");
+            if (cvv == 0) throw new Exception("CVV Cannot Be Empty");
+            if (cvv.ToString().Length != 3) throw new Exception("CVV must be 3 digits long");
+
+            DebitCardEntity cardEntity = new DebitCardEntity(cardNumber, expiryDate, cvv);
+            UserEntity userEntity = new UserEntity(name, username, password, cardEntity, 1000);
+            UserEntity entity = await UserService.CreateAsync(userEntity);
+
+            color = "green";
+            DisplayMessage($"User {entity.UserName} successfully created");
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            DisplayMessage(e.Message);
+        }
+    }
+
+    private void DisplayMessage(string errorMessage)
+    {
+        errorLabel = $"Error: {errorMessage}";
+        isErrorMessageDisplayed = true;
+        timer = new Timer(OnTimerElapsed, null, messageDisplayTime, Timeout.Infinite);
+    }
+
+    private void OnTimerElapsed(object state)
+    {
+        timer?.DisposeAsync();
+    // Clear the error message here
+        isErrorMessageDisplayed = false;
+        InvokeAsync(StateHasChanged);
+    }
+
+}

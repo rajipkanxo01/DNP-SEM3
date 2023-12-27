@@ -1,0 +1,4 @@
+GeneratedFiles\Protos/User.cs \
+GeneratedFiles\Protos/UserGrpc.cs: C:/Users/pdlra/.nuget/packages/grpc.tools/2.54.0/build/native/include/google/protobuf/wrappers.proto\
+ Protos/debitcard.proto\
+ Protos/user.proto

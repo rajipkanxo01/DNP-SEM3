@@ -1,0 +1,68 @@
+﻿@page "/SignUp"
+@inject NavigationManager NavigationManager
+
+<h1>Registration Form</h1>
+
+@switch (Step)
+{
+    case 1:
+        <h2>Step 1: Personal Information</h2>
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" class="form-control" id="name" @bind-value="@Name"/>
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" id="email" @bind-value="@Email"/>
+        </div>
+        <button class="btn btn-primary" @onclick="@GoToStep2">Next</button>
+        break;
+    case 2:
+        <h2>Step 2: Account Information</h2>
+        <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" class="form-control" id="username" @bind-value="@Username"/>
+        </div>
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" class="form-control" id="password" @bind-value="@Password"/>
+        </div>
+        <button class="btn btn-primary" @onclick="@GoToStep3">Next</button>
+        break;
+    case 3:
+        <h2>Step 3: Confirm Information</h2>
+        <p>Please review your information:</p>
+        <ul>
+            <li>Name: @Name</li>
+            <li>Email: @Email</li>
+            <li>Username: @Username</li>
+            <li>Password: @Password</li>
+        </ul>
+        <button class="btn btn-primary" @onclick="@SubmitForm">Submit</button>
+        break;
+}
+
+@code {
+    private int Step = 1;
+    private string Name;
+    private string Email;
+    private string Username;
+    private string Password;
+
+    private void GoToStep2()
+    {
+        Step = 2;
+    }
+
+    private void GoToStep3()
+    {
+        Step = 3;
+    }
+
+    private void SubmitForm()
+    {
+    // Handle form submission
+        NavigationManager.NavigateTo("/thankyou");
+    }
+
+}

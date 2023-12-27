@@ -1,0 +1,89 @@
+﻿@page "/ViewToy"
+@using BlazorServerApp.Data
+@using Domains
+@inject IChildService ChildService;
+<h3>ViewToy</h3>
+
+<div class="filter-bar">
+    <div class="filters-container">
+        <img src="icons/@(doShowFilters ? "clear_" : "")funnel.png" style="width: 50px ; height: 50px" @onclick="@(() => doShowFilters = !doShowFilters)" alt="Funnel"/>
+        @if (doShowFilters)
+        {
+            <div class=" field">
+                <label>Gender Filter:</label>
+                <input type="text" @bind="genderFilter" @bind:event="oninput"/>
+            </div>
+            <div class="filter">
+                <label>Is Completed?</label>
+                <select @bind="isFavouriteFilter">
+                    <option value="all">All</option>
+                    <option value="true">Yes</option>
+                    <option value="false">No</option>
+                </select>
+            </div>
+        }
+    </div>
+</div>
+
+<div class="button-row">
+    <button @onclick="Load" class="btn-outline-primary">Load</button>
+</div>
+
+@foreach (var child in allChilds)
+{
+    <span>@child.Name is @child.Age years old @child.Gender. Their toys include:</span>
+    <table class="table-bordered">
+        <thead>
+        <tr>
+            <th>Toy Name</th>
+            <th>Color</th>
+            <th>Is Favourite?</th>
+            <th>Delete?</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var toy in child.AllToys!)
+        {
+            <tr>
+                <td>@toy.Name</td>
+                <td>@toy.Color</td>
+                <td>@toy.IsFavourite</td>
+                <td>
+                    <label @onclick="@(() => RemoveToy(toy.Id))" style="cursor:pointer; color: red; font-weight: bold">
+                        &#x2717;
+                    </label>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}
+
+
+@code {
+    private bool doShowFilters;
+    private string? isFavouriteFilter;
+    private string? genderFilter;
+
+    private ICollection<Child> allChilds = new List<Child>();
+
+
+    private async Task Load()
+    {
+        bool? favouriteFilerValue = null;
+
+        if (!string.IsNullOrEmpty(isFavouriteFilter) && !isFavouriteFilter.Equals("all"))
+        {
+            favouriteFilerValue = bool.Parse(isFavouriteFilter);
+        }
+
+        allChilds = await ChildService.GetAllChilds(favouriteFilerValue,genderFilter);
+    }
+
+    private async Task RemoveToy(int toyId)
+    {
+        await ChildService.DeleteToyAsync(toyId);
+        await Load();
+    }
+
+}

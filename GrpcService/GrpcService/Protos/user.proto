@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+option csharp_namespace = "GRPCTest";
+
+import "google/protobuf/wrappers.proto";
+import "Protos/debitcard.proto";
+
+message User {
+  int64 user_id = 1;
+  string full_name = 2;
+  string user_name = 3;
+  string password = 4;
+  DebitCard card = 5;
+}
+
+service UserProtoService {
+  rpc GetUser(google.protobuf.Int64Value) returns (google.protobuf.BoolValue) {}
+  rpc CreateUser(User) returns (User) {}
+  rpc UpdateUser(UpdateUserRequest) returns (User) {}
+  rpc DeleteUser(google.protobuf.Int64Value) returns (google.protobuf.BoolValue) {}
+}
+
+message UpdateUserRequest {
+  string name = 1;
+}

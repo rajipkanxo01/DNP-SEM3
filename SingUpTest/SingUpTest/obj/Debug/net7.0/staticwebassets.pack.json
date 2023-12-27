@@ -1,0 +1,89 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\VIA\\SEM-3\\Projects\\DNP1\\SingUpTest\\SingUpTest\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\SingUpTest.bundle.scp.css",
+      "PackagePath": "staticwebassets\\SingUpTest.bundle.scp.css"
+    },
+    {
+      "Id": "D:\\VIA\\SEM-3\\Projects\\DNP1\\SingUpTest\\SingUpTest\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\VIA\\SEM-3\\Projects\\DNP1\\SingUpTest\\SingUpTest\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "D:\\VIA\\SEM-3\\Projects\\DNP1\\SingUpTest\\SingUpTest\\wwwroot\\css\\open-iconic\\FONT-LICENSE",
+      "PackagePath": "staticwebassets\\css\\open-iconic"
+    },
+    {
+      "Id": "D:\\VIA\\SEM-3\\Projects\\DNP1\\SingUpTest\\SingUpTest\\wwwroot\\css\\open-iconic\\ICON-LICENSE",
+      "PackagePath": "staticwebassets\\css\\open-iconic"
+    },
+    {
+      "Id": "D:\\VIA\\SEM-3\\Projects\\DNP1\\SingUpTest\\SingUpTest\\wwwroot\\css\\open-iconic\\README.md",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\README.md"
+    },
+    {
+      "Id": "D:\\VIA\\SEM-3\\Projects\\DNP1\\SingUpTest\\SingUpTest\\wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\VIA\\SEM-3\\Projects\\DNP1\\SingUpTest\\SingUpTest\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.eot",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.eot"
+    },
+    {
+      "Id": "D:\\VIA\\SEM-3\\Projects\\DNP1\\SingUpTest\\SingUpTest\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.otf"
+    },
+    {
+      "Id": "D:\\VIA\\SEM-3\\Projects\\DNP1\\SingUpTest\\SingUpTest\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.svg"
+    },
+    {
+      "Id": "D:\\VIA\\SEM-3\\Projects\\DNP1\\SingUpTest\\SingUpTest\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.ttf",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.ttf"
+    },
+    {
+      "Id": "D:\\VIA\\SEM-3\\Projects\\DNP1\\SingUpTest\\SingUpTest\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.woff"
+    },
+    {
+      "Id": "D:\\VIA\\SEM-3\\Projects\\DNP1\\SingUpTest\\SingUpTest\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "D:\\VIA\\SEM-3\\Projects\\DNP1\\SingUpTest\\SingUpTest\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "D:\\VIA\\SEM-3\\Projects\\DNP1\\SingUpTest\\SingUpTest\\wwwroot\\images\\chip.png",
+      "PackagePath": "staticwebassets\\images\\chip.png"
+    },
+    {
+      "Id": "D:\\VIA\\SEM-3\\Projects\\DNP1\\SingUpTest\\SingUpTest\\wwwroot\\images\\number-1.png",
+      "PackagePath": "staticwebassets\\images\\number-1.png"
+    },
+    {
+      "Id": "D:\\VIA\\SEM-3\\Projects\\DNP1\\SingUpTest\\SingUpTest\\wwwroot\\images\\number-2.png",
+      "PackagePath": "staticwebassets\\images\\number-2.png"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.SingUpTest.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.SingUpTest.props",
+      "PackagePath": "build\\SingUpTest.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.SingUpTest.props",
+      "PackagePath": "buildMultiTargeting\\SingUpTest.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildTransitive.SingUpTest.props",
+      "PackagePath": "buildTransitive\\SingUpTest.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

@@ -1,0 +1,12 @@
+D:\VIA\SEM-3\Projects\DNP1\GRPCTest\Models\bin\Debug\net7.0\Models.deps.json
+D:\VIA\SEM-3\Projects\DNP1\GRPCTest\Models\bin\Debug\net7.0\Models.dll
+D:\VIA\SEM-3\Projects\DNP1\GRPCTest\Models\bin\Debug\net7.0\Models.pdb
+D:\VIA\SEM-3\Projects\DNP1\GRPCTest\Models\obj\Debug\net7.0\Models.csproj.AssemblyReference.cache
+D:\VIA\SEM-3\Projects\DNP1\GRPCTest\Models\obj\Debug\net7.0\Models.GeneratedMSBuildEditorConfig.editorconfig
+D:\VIA\SEM-3\Projects\DNP1\GRPCTest\Models\obj\Debug\net7.0\Models.AssemblyInfoInputs.cache
+D:\VIA\SEM-3\Projects\DNP1\GRPCTest\Models\obj\Debug\net7.0\Models.AssemblyInfo.cs
+D:\VIA\SEM-3\Projects\DNP1\GRPCTest\Models\obj\Debug\net7.0\Models.csproj.CoreCompileInputs.cache
+D:\VIA\SEM-3\Projects\DNP1\GRPCTest\Models\obj\Debug\net7.0\Models.dll
+D:\VIA\SEM-3\Projects\DNP1\GRPCTest\Models\obj\Debug\net7.0\refint\Models.dll
+D:\VIA\SEM-3\Projects\DNP1\GRPCTest\Models\obj\Debug\net7.0\Models.pdb
+D:\VIA\SEM-3\Projects\DNP1\GRPCTest\Models\obj\Debug\net7.0\ref\Models.dll

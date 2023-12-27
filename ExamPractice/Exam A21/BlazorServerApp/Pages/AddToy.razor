@@ -1,0 +1,97 @@
+﻿@page "/AddToy"
+@using Domains
+@using BlazorServerApp.Data
+@inject IChildService ChildService;
+@inject IToyService ToyService;
+<h3>AddToy</h3>
+
+<div class="form-group field">
+    <label>Toy name:</label>
+    <input type="text" @bind="name" @bind:event="oninput"/>
+</div>
+
+<div class="form-group field">
+    <label>Toy color:</label>
+    <input type="text" @bind="toyColor" @bind:event="oninput"/>
+</div>
+
+<div class="form-group field">
+    <label>Condtion:</label>
+    <input type="text" @bind="condition" @bind:event="oninput"/>
+</div>
+
+<div class="form-group field">
+    <label>Is Favourite:</label>
+    <input type="checkbox" @bind="isFavourite" @bind:event="oninput"/>
+</div>
+
+<div class="form-group field">
+    <label>Belongs To:</label>
+    <select @bind="selectedChildId">
+        <option>Choose</option>
+        @foreach (Child child in allChilds)
+        {
+            <option value="@child.Id">@child.Name</option>
+        }
+    </select>
+</div>
+
+@if (!string.IsNullOrEmpty(resultMsg))
+{
+    <label style="color: @color">@resultMsg</label>
+}
+
+<div class="button-row">
+    <button @onclick="Create" class="btn-outline-primary">Create</button>
+</div>
+
+
+@code {
+    private ICollection<Child> allChilds = new List<Child>();
+    private int selectedChildId;
+
+    private string name;
+    private string? toyColor;
+    private string? condition;
+    private bool isFavourite;
+
+    private string resultMsg;
+    private string color;
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        allChilds = await ChildService.GetAllChilds();
+    }
+
+    private async Task Create()
+    {
+        try
+        {
+            if (string.IsNullOrEmpty(name)) throw new Exception("Name cannot be empty!!");
+            Toy toCreateToy = new Toy()
+            {
+                Color = toyColor,
+                Name = name,
+                Condition = condition,
+                IsFavourite = isFavourite
+            };
+
+            await ToyService.CreateAsync(selectedChildId, toCreateToy);
+            resultMsg = "Toy successfully added!!";
+            color = "green";
+
+            toyColor = "";
+            name = "";
+            condition = "";
+            isFavourite = false;
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            resultMsg = e.Message;
+            color = "Red";
+        }
+    }
+
+}

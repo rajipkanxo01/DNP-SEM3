@@ -1,0 +1,106 @@
+﻿@page "/AddImage"
+@using BlazorServerApp.Clients
+@using Domains
+@inject IImageClient ImageClient;
+<h3>AddImage</h3>
+
+<div class="form-group field">
+    <label>Title:</label>
+    <input type="text" @bind="@imageTitle" @bind:event="oninput"/>
+</div>
+
+<div class="form-group field">
+    <label>Album:</label>
+    <select @bind="selectedAlbumTitle">
+        <option>Choose</option>
+        @foreach (var title in allTitles)
+        {
+            <option value="@title">@title</option>
+        }
+    </select>
+</div>
+
+<div class="form-group field">
+    <label>Description:</label>
+    <input type="text" @bind="@description" @bind:event="oninput"/>
+</div>
+
+<div class="form-group field">
+    <label>Topic:</label>
+    <input type="text" @bind="@topic" @bind:event="oninput"/>
+</div>
+
+<div class="form-group field">
+    <label>URL:</label>
+    <input type="text" @bind="@url" @bind:event="oninput"/>
+</div>
+
+@if (!string.IsNullOrEmpty(imageUrl))
+{
+    <img src="@imageUrl" style="width: 150px ; height: 150px"/>
+}
+
+@if (!string.IsNullOrEmpty(resultMsg))
+{
+    <label style="color: @color">@resultMsg</label>
+}
+
+<div class="button-row">
+    <button @onclick="Create" class="btn-outline-primary">Create</button>
+</div>
+
+@code {
+    private string imageTitle;
+    private string? description;
+    private string topic;
+    private string url;
+    private ICollection<string> allTitles = new List<string>();
+    private string? selectedAlbumTitle;
+    private string imageUrl;
+
+
+    private string? resultMsg;
+    private string? color;
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        allTitles = await ImageClient.GetAlbumTitlesAsync();
+    }
+
+    private async Task Create()
+    {
+        try
+        {
+            if (string.IsNullOrEmpty(imageTitle)) throw new Exception("Image Title cannot be empty!");
+            if (string.IsNullOrEmpty(topic)) throw new Exception("Topic cannot be empty!!");
+            if (string.IsNullOrEmpty(url)) throw new Exception("URL cannot be empty!!");
+            if (string.IsNullOrEmpty(selectedAlbumTitle)) throw new Exception("Album title must be selected!!");
+
+            Image toCreateImage = new Image()
+            {
+                Description = description,
+                Title = imageTitle,
+                Topic = topic,
+                URL = url
+            };
+            Image addedImage = await ImageClient.AddImageToAlbumAsync(toCreateImage, selectedAlbumTitle);
+            imageUrl = addedImage.URL;
+
+            description = "";
+            imageTitle = "";
+            topic = "";
+            url = "";
+
+            resultMsg = $"Image successfully in added in {selectedAlbumTitle}";
+            color = "green";
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            resultMsg = e.Message;
+            color = "red";
+        }
+    }
+
+}
